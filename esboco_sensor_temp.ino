@@ -9,7 +9,7 @@ DallasTemperature sensors(&oneWire);
 void setup() {
   Serial.begin(115200);
   sensors.begin();
-  Serial.println("Inicializando DS18B20...");
+  Serial.println("Inicializando Sensor...");
 
   if (sensors.getDeviceCount() == 0) {
     Serial.println("Nenhum sensor encontrado!");
@@ -24,7 +24,7 @@ void loop() {
   float tempC = sensors.getTempCByIndex(0);
 
   if (tempC == DEVICE_DISCONNECTED_C) {
-    Serial.println("Erro: DS18B20 desconectado!");
+    Serial.println("Erro: Sensor desconectado!");
   } else {
     Serial.print("Temperatura: ");
     Serial.print(tempC);
